@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-html-config
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>GitOps Demo</title>
+    </head>
+    <body>
+      <h1>Welcome to the GitOps Demo with ArgoCD!</h1>
+    </body>
+    </html>
