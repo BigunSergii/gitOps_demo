@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name     : nginx_app
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    name     : in-cluster
+    namespace: nginx_app
+  source:
+    path   : "provisioning-automation"
+    repoURL: "git@github.com:BigunSergii/gitOps_demo.git"
+    targetRevision: HEAD
+    # helm:
+    #   valueFiles:
+    #   - values_dev.yaml
+    #   parameters:
+    #   - name: "container.image"
+    #     value: adv4000/app1:v3
+
+  project: default
+  syncPolicy:
+    automated:
+      prune   : true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true         
