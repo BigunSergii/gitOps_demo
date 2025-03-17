@@ -10,7 +10,7 @@ spec:
     name     : in-cluster
     namespace: nginx-app
   source:
-    path   : "provisioning-automation"
+    path   : ./provisioning-automation
     repoURL: "git@github.com:BigunSergii/gitOps_demo.git"
     targetRevision: HEAD
     # helm:
