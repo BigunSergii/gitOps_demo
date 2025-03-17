@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name     : nginx_app
+  name     : nginx-app
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name     : in-cluster
-    namespace: nginx_app
+    namespace: nginx-app
   source:
     path   : "provisioning-automation"
     repoURL: "git@github.com:BigunSergii/gitOps_demo.git"
