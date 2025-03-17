@@ -4,7 +4,7 @@ metadata:
   annotations:
     reloader.stakater.com/auto: "true"
   name: nginx-demo
-  namespace: demo
+  namespace: nginx-app
   labels:
     app: nginx-demo
 spec:
